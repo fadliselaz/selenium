@@ -3,7 +3,16 @@ import requests
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
+import os
 
+# tanya trending yang digunakan
+t1 = str(input("Pilih Trending Topic1 : \n"))
+t2 = str(input("Pilih Trending Topic2: \n"))
+os.system("clear")
+print("Wait...")
+trend = f"{t1}\n{t2}"
+
+# Selenium Section
 browser = webdriver.Chrome(executable_path="./chromedriver")
 browser.get("https://www.twitter.com/")
 
@@ -14,23 +23,19 @@ ps = browser.find_element_by_name("session[password]")
 ps.send_keys("tigabelas1313", Keys.ENTER)
 
 
-trend = """
-#JanganCurangiSuaraRakyat
-#225MeninggalPecatKetuaKPU
-"""
-
+# Beautifull Soup Section
 source = requests.get("https://www.gelora.co/").text
-
 soup = BeautifulSoup(source, "html5lib")
 
-div = soup.find("div", class_="widget-content popular-posts")
 
-for i in div.find_all("a"):
+for i in soup.find_all("h2", class_="post-title entry-title"):
+ 
     msg = f"""
 {i.text}
 {trend}
-{i["href"]}
+{i.a["href"]}
 """
+    msg = msg.strip("\n")
     twt = browser.find_element_by_id("tweet-box-home-timeline")
     twt.send_keys(msg)
 
@@ -43,7 +48,7 @@ for i in div.find_all("a"):
     ===================
     {i.text}
     {trend}
-    {i["href"]}
+    {i.a["href"]}
     ===================
     """)
     
