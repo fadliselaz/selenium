@@ -1,0 +1,3 @@
+[12196:775:0428/045202.708587:INFO:CONSOLE(0)] "[DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o", source: https://accounts.google.com/ServiceLogin?hl=id&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&flowName=GlifWebSignIn&flowEntry=ServiceLogin (0)
+[12196:775:0428/045246.585515:WARNING:pref_notifier_impl.cc(23)] Pref observer found at shutdown.
+[12196:775:0428/045246.585587:WARNING:pref_notifier_impl.cc(23)] Pref observer found at shutdown.

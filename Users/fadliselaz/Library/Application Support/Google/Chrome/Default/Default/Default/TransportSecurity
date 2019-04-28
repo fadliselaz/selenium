@@ -1,0 +1,62 @@
+{
+   "2dQZAIXCPYNIoCREhzZEqDcldaiTMEFISOOe2d39jjA=": {
+      "expect_ct": {
+         "expect_ct_enforce": false,
+         "expect_ct_expiry": 1556395540.030299,
+         "expect_ct_observed": 1556309140.030299,
+         "expect_ct_report_uri": "https://reports.fb.com/expectct/"
+      },
+      "expiry": 1571861140.03029,
+      "mode": "force-https",
+      "sts_include_subdomains": false,
+      "sts_observed": 1556309140.030293
+   },
+   "5EdUoB7YUY9zZV+2DkgVXgho8WUvp+D+6KpeUOhNQIM=": {
+      "expiry": 1587845138.709861,
+      "mode": "force-https",
+      "sts_include_subdomains": false,
+      "sts_observed": 1556309138.709865
+   },
+   "7QzmF0xxCtHTEKYxqWspZY5pl1F0B90+PraFnPulnH8=": {
+      "expect_ct": {
+         "expect_ct_enforce": false,
+         "expect_ct_expiry": 1556395539.532745,
+         "expect_ct_observed": 1556309139.532745,
+         "expect_ct_report_uri": "https://reports.fb.com/expectct/"
+      },
+      "expiry": 1571861139.532732,
+      "mode": "force-https",
+      "sts_include_subdomains": true,
+      "sts_observed": 1556309139.532735
+   },
+   "8/RrMmQlCD2Gsp14wUCE1P8r7B2C5+yE0+g79IPyRsc=": {
+      "expiry": 1587845138.134053,
+      "mode": "force-https",
+      "sts_include_subdomains": false,
+      "sts_observed": 1556309138.134056
+   },
+   "DhtPnQj0DWhjmu+NAh81mOr8BWq3w+HxcIPpGNZ4O5g=": {
+      "expect_ct": {
+         "expect_ct_enforce": false,
+         "expect_ct_expiry": 1556395540.743392,
+         "expect_ct_observed": 1556309140.743392,
+         "expect_ct_report_uri": "https://reports.fb.com/expectct/"
+      },
+      "expiry": 1587845140.743346,
+      "mode": "force-https",
+      "sts_include_subdomains": true,
+      "sts_observed": 1556309140.743365
+   },
+   "TZmujbl93Yt3JI8wZ4X/zjkA0WFNGNW44A+o7h4YyHw=": {
+      "expect_ct": {
+         "expect_ct_enforce": false,
+         "expect_ct_expiry": 1556395540.557234,
+         "expect_ct_observed": 1556309140.557234,
+         "expect_ct_report_uri": "https://reports.fb.com/expectct/"
+      },
+      "expiry": 1571861140.557215,
+      "mode": "force-https",
+      "sts_include_subdomains": false,
+      "sts_observed": 1556309140.55722
+   }
+}

@@ -5,12 +5,47 @@ from selenium.webdriver.common.keys import Keys
 import time
 import os
 
+print("""
+==================
+Trending Twitter
+==================
+script : Fadliselaz
+""")
+
+source = requests.get("https://trends24.in/indonesia/").text
+
+soup = BeautifulSoup(source, "lxml")
+
+ol = soup.find("ol", class_="trend-card__list")
+a = ol.find_all()
+
+h = 0
+num = 1
+grabTrend = []
+for i in a:
+    h += 1
+    if h % 2:
+        print("--------------------------------------------\n")
+    else:
+        print(int(num/2), i.text)
+        tambah = i.text
+        grabTrend.append(tambah)
+    num += 1
+
+print("==================================")
+
+
 # tanya trending yang digunakan
-t1 = str(input("Pilih Trending Topic1 : \n"))
-t2 = str(input("Pilih Trending Topic2: \n"))
+t1 = int(input("Pilih Trending Topic1 : \n"))
+t2 = int(input("Pilih Trending Topic2: \n"))
+
+# tanya waktu per POST
+t3 = int(input("jeda waktu/Post/Menit: "))
+waktu = t3 * 60
+
 os.system("clear")
 print("Wait...")
-trend = f"{t1}\n{t2}"
+trend = f"{grabTrend[t1 - 1]}\n{grabTrend[t2 - 1]}"
 
 # Selenium Section
 browser = webdriver.Chrome(executable_path="./chromedriver")
@@ -40,6 +75,8 @@ for i in soup.find_all("h2", class_="post-title entry-title"):
     twt.send_keys(msg)
 
     time.sleep(5)
+
+    # executror POST
     # twt.send_keys(Keys.CONTROL + Keys.RETURN)
 
     print(f"""
@@ -52,7 +89,7 @@ for i in soup.find_all("h2", class_="post-title entry-title"):
     ===================
     """)
     
-    time.sleep(300)
+    time.sleep(waktu)
     # print(i.text)
     # print(" ")
     # print(i["href"])
