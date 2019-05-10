@@ -37,7 +37,12 @@ print("==================================")
 
 # tanya trending yang digunakan
 t1 = int(input("Pilih Trending Topic1 : \n"))
-t2 = int(input("Pilih Trending Topic2: \n"))
+t2 = input("Pilih Trending Topic2: \n")
+
+if t2:
+    t2 = int(t1)
+else:
+    t2 = t1
 
 # tanya waktu per POST
 t3 = int(input("jeda waktu/Post/Menit: "))
@@ -48,7 +53,7 @@ print("Wait...")
 trend = f"{grabTrend[t1 - 1]}\n{grabTrend[t2 - 1]}"
 
 # Selenium Section
-browser = webdriver.Chrome(executable_path="./chromedriver")
+browser = webdriver.Chrome()
 browser.get("https://www.twitter.com/")
 
 time.sleep(3)
@@ -76,8 +81,8 @@ for i in soup.find_all("h2", class_="post-title entry-title"):
 
     time.sleep(5)
 
-    # executror POST
-    # twt.send_keys(Keys.CONTROL + Keys.RETURN)
+    # executor POST
+    twt.send_keys(Keys.CONTROL + Keys.RETURN)
 
     print(f"""
     ===================
