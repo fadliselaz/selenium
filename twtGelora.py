@@ -32,17 +32,43 @@ for i in a:
         grabTrend.append(tambah)
     num += 1
 
+print("untuk masukan sendiri tranding \nSilakan tekan angka 15")
 print("==================================")
 
 
 # tanya trending yang digunakan
-t1 = int(input("Pilih Trending Topic1 : \n"))
-t2 = input("Pilih Trending Topic2: \n")
+t1 = input("Pilih Trending Topic1 : \n")
 
-if t2:
-    t2 = int(t1)
+if not t1:
+    os.system("clear")
+    print("thank you..")
+    time.sleep(3)
+    quit()
+elif t1 == "15":
+    isi = str(input("hastag :"))
+    grabTrend.append(isi)
+    last = len(grabTrend)
+    trend1 = grabTrend[last - 1]
+    print(trend1)
 else:
-    t2 = t1
+    t1 = int(t1)
+    trend1 = grabTrend[t1 - 1]
+
+t2 = input("Pilih Trending Topic2: ")
+
+if not t2:
+    trend2 = trend1
+elif t2 == 15:
+    isi = str(input("hastag :"))
+    grabTrend.append(isi)
+    last = len(grabTrend)
+    trend2 = grabTrend[last - 1]
+    print(trend1)
+else:
+    trend2 = grabTrend[t2 - 1]
+
+trend = f"{trend1}\n{trend2}"
+
 
 # tanya waktu per POST
 t3 = int(input("jeda waktu/Post/Menit: "))
@@ -50,7 +76,7 @@ waktu = t3 * 60
 
 os.system("clear")
 print("Wait...")
-trend = f"{grabTrend[t1 - 1]}\n{grabTrend[t2 - 1]}"
+
 
 # Selenium Section
 browser = webdriver.Chrome()
@@ -82,7 +108,7 @@ for i in soup.find_all("h2", class_="post-title entry-title"):
     time.sleep(5)
 
     # executor POST
-    twt.send_keys(Keys.CONTROL + Keys.RETURN)
+    # twt.send_keys(Keys.CONTROL + Keys.RETURN)
 
     print(f"""
     ===================
